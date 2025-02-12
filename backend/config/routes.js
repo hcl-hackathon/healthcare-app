@@ -3,10 +3,11 @@ const router = express.Router();
 const usersController = require('../app/Controllers/usersController')
 const providerController = require('../app/Controllers/providerController')
 const { authenticateUser } = require("../app/Middlewares/authentication")
+const { roleValidation } = require("../app/Middlewares/rolevalidation")
 const  patientController  = require("../app/Controllers/patientController")
 
 router.post('/register', usersController.register)
-router.post('/login', usersController.login)
+router.post('/login',roleValidation, usersController.login)
 
 router.get('/provider/dashboard/:id', authenticateUser, providerController.dashboardDetails)
 router.patch('/provider/details', authenticateUser, providerController.details)
