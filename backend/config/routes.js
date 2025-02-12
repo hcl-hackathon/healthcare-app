@@ -11,7 +11,7 @@ router.post('/login', usersController.login)
 router.get('/provider/dashboard/:id', authenticateUser, providerController.dashboardDetails)
 router.patch('/provider/details', authenticateUser, providerController.details)
 
-router.get('/patient/dashboard', authenticateUser, patientController.dashboard)
+router.get('/patient/profile', authenticateUser, patientController.dashboard)
 router.put('/patient/profile', authenticateUser, patientController.profile)
 
 

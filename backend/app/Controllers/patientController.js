@@ -13,7 +13,7 @@ patientController.dashboard = async (req, res) => {
 }
 
 patientController.profile = async (req, res) => {
-    const { email, password, username, age, address, healthInfo, waterIntake, steps } = req.body;
+    const { email } = req.body;
     try {
         let user = await User.findOne({ email: email })
         if (!user) {
@@ -21,8 +21,8 @@ patientController.profile = async (req, res) => {
                 errors: 'invalid email or password'
             })
         } else {
-            let result = await User.updateOne({ email: email }, req.body)
-            res.send({ status: "OK", result: result })
+            await User.updateOne({ email: email }, req.body)
+            res.send(user)
         }
     } catch (error) {
         res.send({ "status": "failed", "error": error })

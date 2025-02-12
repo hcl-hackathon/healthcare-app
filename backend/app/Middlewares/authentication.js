@@ -7,6 +7,7 @@ const authenticateUser = async (req, res, next) => {
     let tokenData
     try{
         tokenData = jwt.verify(token, process.env.SECRET_KEY)
+        console.log(tokenData)
         const selectedModel = tokenData.role === 'provider' ? Provider: User 
         const user = await selectedModel.findById(tokenData._id);
         if (!user) {
