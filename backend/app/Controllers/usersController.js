@@ -15,7 +15,7 @@ usersController.register = (req, res) => {
 
     if (userRole === 'patient') {
     bcryptjs.genSalt()
-           .then((salt)=>{
+        .then((salt) => {
             bcryptjs.hash(user.password, salt)
               .then((encrpted)=>{
                        user.password = encrpted
@@ -107,10 +107,6 @@ usersController.login = (req, res) => {
             }
 }
 
-usersController.account = (req, res) => {
-    res.json("hello")
-
-}
 
 
 module.exports = usersController

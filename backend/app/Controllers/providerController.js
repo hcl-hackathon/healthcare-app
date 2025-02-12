@@ -6,10 +6,8 @@ const providerController = {}
 
 providerController.dashboardDetails = (req, res) => {
     const id = req.params.id
-    console.log(id, 'id check')
     Provider.findById(id)
     .then((provider) => {
-        console.log(provider, 'response')
         res.json(provider)
     })
     .catch((err) => {
