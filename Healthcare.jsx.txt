@@ -1,0 +1,62 @@
+import React from 'react'
+import './HealthCarePortal.css'
+
+function HealthCarePortal() {
+	return (
+		<div className="container">
+			<header>
+				<h2>Healthcare Portal</h2>
+			</header>
+
+			<nav>
+				<ul>
+					<li>
+						<a href="#">Home</a>
+					</li>
+					<li>
+						<a href="#">Health Topics</a>
+					</li>
+					<li>
+						<a href="#">Services</a>
+					</li>
+					<li>
+						<a href="#">Contact</a>
+					</li>
+				</ul>
+			</nav>
+			<div>
+				<h3>Latest Health Information</h3>
+			</div>
+			<div className="main-cont">
+				<section>
+					<div className="cont1">
+						<h5>COVID-19 Updates</h5>
+						<p>
+							Stay informed about the latest COVID-19 guidelines
+							and vaccination information.
+						</p>
+						<button className="button">Read More</button>
+					</div>
+					<div className="cont2">
+						<h5>Seasonal Flu Prevention</h5>
+						<p>
+							Learn about steps you can take to prevent the
+							seasonal flu and when to get vaccinated.
+						</p>
+						<button className="button">Read More</button>
+					</div>
+					<div className="cont3">
+						<h5>Mental Health Awareness</h5>
+						<p>
+							Explore resources and support options for
+							maintaining good mental health.
+						</p>
+						<button className="button">Read More</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	)
+}
+
+export default HealthCarePortal
