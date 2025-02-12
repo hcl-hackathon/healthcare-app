@@ -7,8 +7,13 @@ const port = process.env.PORT || 3035
 app.use(express.json())
 app.use(router)
 
-// configureDB()  // connect to DB
+configureDB() 
 
+app.get("/health", (req, res) => {
+    res.status(200).json({
+        "health": "OK"
+    })
+});
 
 app.listen(port, () => {
     console.log(`server running on port:${port}`)
