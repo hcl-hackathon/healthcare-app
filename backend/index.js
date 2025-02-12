@@ -7,7 +7,7 @@ const port = process.env.PORT || 3035
 app.use(express.json())
 app.use(router)
 
-// configureDB()  // connect to DB
+configureDB()  // connect to DB
 
 
 app.listen(port, () => {
